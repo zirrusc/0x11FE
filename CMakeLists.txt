@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(0x11FE CXX)
-add_executable(0x11FE main.cpp)
-add_definitions("-Wall -std=c++11 -stdlib=libc++")
+add_executable(0x11FE
+	main.cpp
+	)
+add_executable(PatternTest
+	PatternObject.cpp
+	Pattern.cpp
+	PatternTest.cpp
+	)
+add_definitions(" -std=c++11 -stdlib=libc++")
 
 if(APPLE)
 	set(CMAKE_CXX_COMPILER clang++)
@@ -19,3 +26,5 @@ if(APPLE)
 	endif()
 	target_link_libraries(0x11FE ${OPENGL_LIBRARY} ${GLUT_LIBRARY} ${GLFW_LIBRARY})
 endif(APPLE)
+
+file(COPY pattern/ DESTINATION pattern)
