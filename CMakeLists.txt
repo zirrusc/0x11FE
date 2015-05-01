@@ -8,7 +8,7 @@ add_executable(PatternTest
 	Pattern.cpp
 	PatternTest.cpp
 	)
-add_definitions(" -std=c++11 -stdlib=libc++")
+add_definitions("-Wall -std=c++11 -stdlib=libc++")
 
 if(APPLE)
 	set(CMAKE_CXX_COMPILER clang++)
